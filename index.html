@@ -1,44 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
- 
-  <title>STATE PATTERN PROJECT</title>
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-  <a href="#" class="navbar-brand">State Pattern Project</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportContent">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <head>
+    <title>LoanCalculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a href="#" id="home" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" id="about" class="nav-link">About</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" id="contact" class="nav-link">Contact</a>
-      </li>
-    </ul>
-  </div>
-  </nav>
-  <div class="container">
-    <h1 id="heading"></h1>
-    <div id="content"></div>
-  </div>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card card-body text-center mt-5">
+            <h1 class="heading display-5 pb-3">Loan Calculator</h1>
+            <form id="loan-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">$</span>
+                  <input type="number" class="form-control" id="amount" placeholder="Loan Amount">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">%</span>
+                  <input type="number" class="form-control" id="interest" placeholder="Interest">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" id="years" placeholder="Years To Repay">
+              </div>
+              <div class="forn-group">
+                <input type="submit" value="Calculate" class="btn btn-dark btn-block">
+              </div>
+            </form>
+            <!-- LOADER -->
+            <!--
+            <div id="loading">
+              <img src="img/loading.gif" alt="">
+            </div>
+            -->
+            <!-- RESULTS -->
+            <div id="results" class="pt-4">
+              <h5>Results</h5>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Monthly Payment</span>
+                  <input type="number" class="form-control" id="monthly-payment" disabled>
+                </div>
+              </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.min.js" integrity="sha512-bztGAvCE/3+a1Oh0gUro7BHukf6v7zpzrAb3ReWAVrt+bVNNphcl2tDTKCBr5zk7iEDmQ2Bv401fX3jeVXGIcA==" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Total Payment</span>
+                  <input type="number" class="form-control" id="total-payment" disabled>
+                </div>
+              </div>
 
-  <script src="apph.js"></script>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Total Interest</span>
+                  <input type="number" class="form-control" id="total-interest" disabled>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    
+    <script src = "app.js">  </script>
+  </body>
 </html>
